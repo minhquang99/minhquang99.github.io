@@ -1,47 +1,32 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+/*==================== INTRO ====================*/
 
+let intro = document.querySelector('.intro');
+let logo = document.querySelector('.logo-header');
+let logoSpan = document.querySelectorAll('.logo');
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if(navToggle) {
-    console.log('Open')
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu')
+window.addEventListener('DOMContentLoaded', () =>{
+     
+    setTimeout(() => {
+        logoSpan.forEach((span, index) => {
+            setTimeout(() => {
+                span.classList.add('active');
+            }, (index + 1) * 400)
+        })
     })
-}
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navClose) {
-    console.log('Close')
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
-    })
-}
+    setTimeout(() => {
+        logoSpan.forEach((span, index) => {
+            setTimeout(() => {
+                span.classList.remove('active');
+                span.classList.add('fade');
+            }, (index + 1) * 50)
+        })
+    }, 2000)
 
-
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    console.log('remove')
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== ACCORDION SKILLS ====================*/
-
-
-/*==================== QUALIFICATION TABS ====================*/
-
-
-/*==================== SERVICES MODAL ====================*/
-
+    setTimeout(() => {
+        intro.style.top = '-100vh';
+    }, 2300)
+})
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiper = new Swiper('.portfolio__container', {
@@ -58,16 +43,6 @@ let swiper = new Swiper('.portfolio__container', {
     },
 });
 
-
-/*==================== TESTIMONIAL ====================*/
-
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-
-
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
-
-
 /*==================== SHOW SCROLL UP ====================*/ 
 function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
@@ -77,4 +52,45 @@ function scrollUp(){
 window.addEventListener('scroll', scrollUp)
 
 
-/*==================== DARK LIGHT THEME ====================*/ 
+
+
+
+
+
+
+/*==================== MENU SHOW Y HIDDEN ====================*/
+// const navMenu = document.getElementById('nav-menu'),
+//       navToggle = document.getElementById('nav-toggle'),
+//       navClose = document.getElementById('nav-close')
+
+
+// /*===== MENU SHOW =====*/
+// /* Validate if constant exists */
+// if(navToggle) {
+//     console.log('Open')
+//     navToggle.addEventListener('click', () => {
+//         navMenu.classList.add('show-menu')
+//     })
+// }
+
+// /*===== MENU HIDDEN =====*/
+// /* Validate if constant exists */
+// if(navClose) {
+//     console.log('Close')
+//     navClose.addEventListener('click', () => {
+//         navMenu.classList.remove('show-menu')
+//     })
+// }
+
+
+// /*==================== REMOVE MENU MOBILE ====================*/
+// const navLink = document.querySelectorAll('.nav__link')
+
+// function linkAction(){
+//     console.log('remove')
+//     const navMenu = document.getElementById('nav-menu')
+//     // When we click on each nav__link, we remove the show-menu class
+//     navMenu.classList.remove('show-menu')
+// }
+// navLink.forEach(n => n.addEventListener('click', linkAction))
+

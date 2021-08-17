@@ -350,53 +350,141 @@ img {
 }
 
 /*==================== ABOUT ====================*/
-.about-img {
-    width: 200px;
-    border-radius: 0.5rem;
-    justify-self: center;
-    align-self: center;
+
+.home__mybrain {
+    margin-top: 10px;
 }
 
-.about__description {
-    text-align: center;
-    margin-bottom: var(--mb-2-5);
+.home__mybrain h2 {
+    font-weight: 600;
+    font-size: 15px;
 }
 
-.about__info {
+.home__mybrain h3 {
+    text-align: left;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.home__mybrain .brain-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+}
+
+.home__mybrain .brain-grid .brain-box {
+    margin-top: 20px;
+}
+
+.badges {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: var(--mb-2-5);
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-.about__info {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: var(--mb-2-5);
+.badges .badge {
+    cursor: pointer;
+    margin: 5px 10px;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    padding: 0 8px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    --c-hover: var(--first-color);
 }
 
-.about__info-title {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
+.badges .badge--html:hover {
+    --c-hover: #e34f26;
 }
 
-.about__info-title,
-.about__info-name {
-    display: block;
-    text-align: center;
+.badges .badge--css:hover {
+    --c-hover: #196eb3;
 }
 
-.about__buttons {
-    display: flex;
-    justify-content: center;
+.badges .badge--js:hover {
+    --c-hover: #c5b011;
 }
-/*==================== SKILLS ====================*/
 
-/*==================== QUALIFICATION ====================*/
+.badges .badge--git:hover {
+    --c-hover: #e84f31;
+}
 
-/*==================== SERVICES ====================*/
+.badges .badge--npm:hover {
+    --c-hover: #cb3837;
+}
 
-/* Active Modal */
+.badges .badge--react:hover {
+    --c-hover: #08a9c5;
+}
+
+.badges .badge--redux:hover {
+    --c-hover: #7348b6;
+}
+
+.badges .badge--sass:hover {
+    --c-hover: #c76395;
+}
+
+.badges .badge--bootstrap:hover {
+    --c-hover: #533b77;
+}
+
+.badges .badge--others:hover {
+    --c-hover: #f2aa4c;
+}
+
+.badges .badge--ts:hover {
+    --c-hover: #3178c6;
+}
+
+.badges .badge--gsap:hover {
+    --c-hover: #86c03c;
+}
+
+.badges .badge--next:hover {
+    --c-hover: #000;
+}
+
+.badges .badge--graph:hover {
+    --c-hover: #db0593;
+}
+
+.badges .badge::before,
+.badges .badge::after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: calc(100% + 10px);
+    background: var(--c-hover);
+    z-index: -1;
+    -webkit-transition: 0.1s ease-out;
+    transition: 0.1s ease-out;
+}
+
+.badges .badge::before {
+    top: 0;
+    left: -10px;
+}
+
+.badges .badge::after {
+    bottom: 0;
+    right: -10px;
+}
+
+.badges .badge:hover::before {
+    left: -5px;
+}
+
+.badges .badge:hover::after {
+    right: -5px;
+}
 
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
@@ -457,12 +545,6 @@ img {
 .swiper-pagination-bullet {
     outline: none;
 }
-
-/*==================== PROJECT IN MIND ====================*/
-
-/*==================== TESTIMONIAL ====================*/
-
-/*==================== CONTACT ME ====================*/
 
 /*==================== FOOTER ====================*/
 
@@ -591,7 +673,22 @@ img {
 
     .about__container,
     .portfolio__content .footer__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .home__mybrain {
+        margin-top: 35px;
+    }
+    .home__mybrain h2 {
+        font-size: 16px;
+    }
+    .home__mybrain h3 {
+        font-size: 15px;
+    }
+    .home__mybrain .brain-grid {
+        -ms-grid-columns: (1fr);
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 }
 
@@ -693,6 +790,16 @@ img {
     .footer__copy {
         margin-top: 4.5rem;
     }
+
+    .home__mybrain {
+        margin-top: 40px;
+    }
+    .home__mybrain h2 {
+        font-size: 18px;
+    }
+    .home__mybrain h3 {
+        font-size: 16px;
+    }
 }
 /* For large devices */
 
@@ -734,4 +841,57 @@ img {
     .swiper-container-horizoltal > .swiper-pagination-bullets {
         bottom: -4.5rem;
     }
+
+    .home__mybrain {
+        margin-top: 5px;
+    }
+    .home__mybrain h2 {
+        font-size: 20px;
+    }
+    .home__mybrain h3 {
+        font-size: 18px;
+    }
+    .home__mybrain .brain-grid {
+        -ms-grid-columns: (1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 100px;
+    }
+}
+
+.intro {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--first-color);
+    transition: 1s;
+}
+
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: #fff;
+    transform: translateX(-50%, -50%);
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    bottom: -20px;
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
 }
